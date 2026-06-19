@@ -1,61 +1,68 @@
-# Claude Clone — React + Node
+# PDF AI Assistant — ChatGPT Style RAG Application
 
-A pixel-perfect duplicate of the Claude.ai chat UI, powered by the real Anthropic API.
-
-## Project Structure
-
-```
-claude-clone/
-├── backend/          ← Node.js + Express API
-│   ├── server.js
-│   └── package.json
-└── frontend/         ← React UI (Claude look-alike)
-    ├── src/
-    │   ├── App.js
-    │   ├── App.css
-    │   └── index.js
-    ├── public/
-    │   └── index.html
-    └── package.json
-```
-
-## Setup & Run
-
-### 1. Backend
-
-```bash
-cd backend
-npm install
-node server.js
-# Runs on http://localhost:3001
-```
-
-> The backend reads `ANTHROPIC_API_KEY` from the environment.
-> Set it before starting: `export ANTHROPIC_API_KEY=your_key_here`
-
-### 2. Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-# Runs on http://localhost:3000
-```
-
-The frontend proxies `/api/*` to `localhost:3001` automatically.
+An intelligent AI assistant that answers questions exclusively from uploaded PDF documents.
 
 ## Features
 
-- Dark Claude UI — sidebar, model selector, welcome screen
-- Typing animation while waiting for a response
-- Markdown rendering (bold, italic, headers, lists)
-- Suggestion chips to try ("Tell me about broccoli", etc.)
-- Multi-turn conversation memory
-- Fully powered by `claude-sonnet-4-20250514`
+* Upload PDF documents instantly
+* Extracts and processes document content
+* Answers questions only from the uploaded PDF
+* ChatGPT-style conversational interface
+* Context-aware multi-turn conversations
+* Fast document search and retrieval
+* Clean, modern, responsive UI
+* Source-grounded responses based on document content
+* Prevents hallucinations by limiting answers to uploaded documents
 
-## Try It
+## Technology Stack
 
-Ask anything! For example:
-- "Tell me about tomatoes"
-- "What are the benefits of spinach?"
-- "Explain how photosynthesis works"
+### Frontend
+
+* React.js
+* Tailwind CSS
+* Axios
+
+### Backend
+
+* Node.js
+* Express.js
+
+### AI & Document Processing
+
+* OpenAI / Claude API
+* PDF Parser
+* Vector Embeddings
+* Retrieval-Augmented Generation (RAG)
+
+## How It Works
+
+1. Upload a PDF document.
+2. The system extracts and indexes the document content.
+3. User asks questions in a chat interface.
+4. Relevant sections are retrieved from the PDF.
+5. AI generates accurate answers based only on the uploaded document.
+
+## Use Cases
+
+* Student Notes & Study Materials
+* Research Papers
+* Company Documents
+* User Manuals
+* Legal Documents
+* Reports & Documentation
+
+## Example
+
+**User:** What is the main objective of this document?
+
+**AI:** Based on the uploaded PDF, the main objective is...
+
+## Future Enhancements
+
+* Multiple PDF support
+* Document summarization
+* Citation highlighting
+* OCR for scanned PDFs
+* Voice interaction
+* Export chat history
+
